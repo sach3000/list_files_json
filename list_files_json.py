@@ -2,10 +2,9 @@
 
 import glob
 import os
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 from pathlib import Path
 import json
-from types import SimpleNamespace
 import argparse
 
 
