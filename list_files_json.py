@@ -55,7 +55,6 @@ def transform_datetime(s):
 def get_files_list(config):
     files = []
     for f in sorted(glob.glob(os.path.join(config.path + "/**/*" + config.mask + "*"), recursive=True)):
-    ##for f in sorted(Path(config.path).rglob(*" + config.mask + "*)):
        if os.path.isfile(f):
           stat = os.stat(f, dir_fd=None, follow_symlinks=False)
           f_attr = FileAttribute(f, stat.st_size, stat.st_atime, stat.st_mtime, stat.st_ctime, Path(f).owner(), Path(f).group())
