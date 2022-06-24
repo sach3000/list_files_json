@@ -80,10 +80,7 @@ def get_files_list(config):
                 'owner' : f_attr.owner,
                 'group' : f_attr.group
              }
-             #files.append(dict(zip([Path(f).name],[fAttrDict])))
              files.append(fAttrDict)
-
-             #files_tmp.append(dict(zip([Path(f).name],[fAttrDict])))
              files_tmp.append(fAttrDict)
        if config.idx:
           files_by_req_index.append(files_tmp[int(config.idx)])
