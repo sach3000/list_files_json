@@ -65,7 +65,7 @@ def get_files_list(config):
 
     for ptr in config.mask.split(';'):
        files_tmp = []
-       for f in sorted(glob.glob(os.path.join(config.path + "/**/*" + ptr + "*"), recursive=True)):
+       for f in sorted(glob.glob(os.path.join(config.path + "/**/*" + ptr + "*"), recursive=True),key=os.path.getctime):
           if os.path.isfile(f):
              stat = os.stat(f, dir_fd=None, follow_symlinks=False)
              f_attr = FileAttribute(Path(f).name, f, stat.st_size, stat.st_atime, stat.st_mtime, stat.st_ctime, int(stat.st_atime), Path(f).owner(), Path(f).group())
